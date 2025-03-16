@@ -28,7 +28,7 @@ class GameResultService {
     fun deleteGameResult(id: Long) = gameResults.removeIf { it.id == id }
 
     fun getTimeInSeconds(id: Long) : Double? {
-        return gameResults.find { it.id == id }?.timeInSeconds
+        return gameResults.find { it.id == id }?.timeInSeconds // allows null values
     }
 
 }

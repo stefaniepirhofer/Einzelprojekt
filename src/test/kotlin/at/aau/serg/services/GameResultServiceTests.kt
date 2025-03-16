@@ -72,4 +72,19 @@ class GameResultServiceTests {
         assertEquals(2, res[1].id)
     }
 
+    @Test
+    fun test_getTimeInSeconds_correctTime () {
+        val gameResult1 = GameResult(1, "player1", 17, 15.3)
+        val gameResult2 = GameResult(2, "player2", 25, 16.0)
+
+        service.addGameResult(gameResult1)
+        service.addGameResult(gameResult2)
+
+        val res1 = service.getTimeInSeconds(gameResult1.id)
+        val res2 = service.getTimeInSeconds(gameResult2.id)
+
+        assertEquals(15.3, res1)
+        assertEquals(16.0, res2)
+    }
+
 }
