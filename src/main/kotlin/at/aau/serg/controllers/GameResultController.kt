@@ -31,8 +31,8 @@ class GameResultController(
     }
 
     @GetMapping("/time-in-seconds/{gameResultId}")
-    fun getGameResultById(@PathVariable gameResultId: Long) {
-        gameResultService.getTimeInSeconds(gameResultId)
+    fun getGameResultById(@PathVariable gameResultId: Long): Double? {
+        return gameResultService.getTimeInSeconds(gameResultId)
     }
     
 }
