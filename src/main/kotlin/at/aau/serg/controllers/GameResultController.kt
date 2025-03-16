@@ -29,5 +29,10 @@ class GameResultController(
     fun deleteGameResult(@PathVariable gameResultId: Long) {
         gameResultService.deleteGameResult(gameResultId)
     }
+
+    @GetMapping("/time-in-seconds/{gameResultId}")
+    fun getGameResultById(@PathVariable gameResultId: Long) {
+        gameResultService.getTimeInSeconds(gameResultId)
+    }
     
 }
